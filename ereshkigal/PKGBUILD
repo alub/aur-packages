@@ -2,7 +2,7 @@
 
 pkgname=ereshkigal
 pkgver=0.3
-pkgrel=3
+pkgrel=4
 pkgdesc="An AutoSSH tunnel monitor"
 arch=('any')
 url="http://sourceforge.net/projects/ereshkigal/"
@@ -18,7 +18,7 @@ sha512sums=('6dff79f9d64e403e372b4e2dc990f5578392f82df1145b62403905d34d99066e9f9
 package() {
   cd "$srcdir/${pkgname}_$pkgver"
 
-  install -D ereshkigal.py "$pkgdir/usr/bin/ereshkigal.py"
+  install -D ereshkigal.py "$pkgdir/usr/bin/ereshkigal"
 }
 
 # vim:set ts=2 sw=2 et:
