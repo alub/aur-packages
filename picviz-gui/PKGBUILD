@@ -3,7 +3,7 @@
 pkgname=picviz-gui
 pkgver=0.7
 pkgrel=1
-pkgdesc="Graphical user interface to PicViz"
+pkgdesc="A parallel coordinates plotter which enables easy scripting from various input (GUI)"
 arch=('any')
 url="http://www.wallinfire.net/picviz/"
 license=('GPL')
