@@ -2,7 +2,7 @@
 
 pkgname=pombo
 pkgver=0.0.6
-pkgrel=1
+pkgrel=3
 pkgdesc="A script that can help you recover your computer if it is stolen"
 arch=('i686' 'x86_64')
 url="http://sebsauvage.net/pombo/"
@@ -14,6 +14,7 @@ optdepends=(
   'scrot: take screenshots of your running desktop'
   'xawtv: take a photo using your webcam'
 )
+backup=('etc/pombo.conf')
 source=("http://sebsauvage.net/${pkgname}/${pkgname}_${pkgver}.zip")
 md5sums=('414c2d5a964a2770ce9e83fd9b6cd4c6')
 sha1sums=('e752dca59338da58794967f1f7d795dd8af791e7')
@@ -23,6 +24,9 @@ sha512sums=('4c78c92ac520983d6c96c3fea36896e24efdf9cc4c9a1e3937612eef9014410ebdf
 
 package() {
   cd "$srcdir/${pkgname}_$pkgver"
+
+  msg "Patching pombo..."
+  sed 's|/sbin/iwconfig|/usr/sbin/iwconfig|' -i pombo.py
 
   install -Dm644 pombo.conf $pkgdir/etc/pombo.conf
   install -D pombo.py $pkgdir/usr/bin/pombo
