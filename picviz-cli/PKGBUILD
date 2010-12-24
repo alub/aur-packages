@@ -2,7 +2,7 @@
 
 pkgname=picviz-cli
 pkgver=0.6
-pkgrel=1
+pkgrel=2
 pkgdesc="PicViz command-line interface"
 arch=('i686' 'x86_64')
 url="http://www.wallinfire.net/picviz/"
@@ -23,8 +23,10 @@ build() {
 
 package() {
   cd "$srcdir/$pkgname-$pkgver/src"
+  install -Dm755 pcv "$pkgdir/usr/bin/pcv"
 
-  install -Dm755 pcv $pkgdir/usr/bin/pcv
+  cd "$srcdir/$pkgname-$pkgver/doc"
+  install -Dm644 pcv.1 "$pkgdir/usr/share/man/man1/pcv.1"
 }
 
 # vim:set ts=2 sw=2 et:
