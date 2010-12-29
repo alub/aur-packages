@@ -2,12 +2,13 @@
 
 pkgname=oneteam
 pkgver=0.999
-pkgrel=2
+pkgrel=3
 pkgdesc="Entreprise multi-network instant messaging client"
 arch=('i686' 'x86_64')
 url="http://oneteam.im/"
 license=('GPL2' 'MPL')
 depends=('gnome-vfs' 'libpulse' 'libxss' 'libnotify' 'xulrunner' 'cairo' 'gtk2' 'gcc-libs')
+options=(!strip)
 install=('oneteam.install')
 
 source=('oneteam.desktop')
