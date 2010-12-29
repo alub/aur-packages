@@ -2,7 +2,7 @@
 
 pkgname=oneteam
 pkgver=0.999
-pkgrel=1
+pkgrel=2
 pkgdesc="Entreprise multi-network instant messaging client"
 arch=('i686' 'x86_64')
 url="http://oneteam.im/"
@@ -25,7 +25,7 @@ package() {
   mkdir -p "$pkgdir"/usr/bin
   ln -s /usr/lib/oneteam/oneteam "$pkgdir"/usr/bin/oneteam
 
-  install -D -m 0644 "$srcdir/$pkgname"/chrome/icons/default/oneteam.png "$pkgdir"/usr/share/icons/hicolor/32x32/oneteam.png
+  install -D -m 0644 "$srcdir/$pkgname"/chrome/icons/default/oneteam.png "$pkgdir"/usr/share/pixmaps/oneteam.png
   install -D -m 0644 oneteam.desktop "$pkgdir"/usr/share/applications/oneteam.desktop
 }
 
