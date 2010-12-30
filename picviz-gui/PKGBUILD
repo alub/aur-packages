@@ -2,21 +2,21 @@
 
 pkgname=picviz-gui
 pkgver=0.7
-pkgrel=1
+pkgrel=2
 pkgdesc="A parallel coordinates plotter which enables easy scripting from various input (GUI)"
 arch=('any')
 url="http://www.wallinfire.net/picviz/"
 license=('GPL')
 depends=('libpicviz' 'pyqt')
 options=(!emptydirs)
-source=("http://www.wallinfire.net/files/picviz/$pkgname-$pkgver.tar.gz")
-md5sums=('86f28498d5ae77d070542b5e2f241a90')
-sha1sums=('73da511a76dc5bc93337df27d165d69443d8a504')
-sha256sums=('07d2299d6199c84a7d9d1865b0a1e0b4080005e4924797a54b500e47083c2567')
-sha384sums=('6c0a1b62b646a2468b37a90077e4d259e692b8044faac8d0ef46dbd36a4e89e345dd8b9e2bfd27b20c3fcc3f2a91cb9f')
-sha512sums=('a079ebc161681ecd14a0d6d4262ddf359a9638dbeb18392f595d5d665aa6fc8f754cfcfd4b7903f7ff6f965e61fc60943d54cc30e960f35b52011681029aed3b')
+source=("http://www.wallinfire.net/files/picviz/$pkgname-$pkgver.tar.gz"
+        'picviz-gui.desktop')
+md5sums=('86f28498d5ae77d070542b5e2f241a90'
+         '73c81fc6c62261d923ddd3d33dfee637')
 
 package() {
+  install -D -m 0644 picviz-gui.desktop "$pkgdir"/usr/share/applications/picviz-gui.desktop
+
   cd "$srcdir/$pkgname-$pkgver"
   python setup.py install --root=$pkgdir/ --optimize=1
 }
