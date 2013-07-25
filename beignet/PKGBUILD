@@ -1,14 +1,14 @@
 # Maintainer: Antoine Lubineau <antoine@lubignon.info>
 
 pkgname=beignet
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc='The Beignet GPGPU System for Intel Ivybridge GPUs'
 arch=('x86_64')
 url='http://cgit.freedesktop.org/beignet/'
 license=('LGPL2.1')
 depends=('mesa' 'libsm' 'glu')
-makedepends=('cmake')
+makedepends=('clang' 'cmake')
 conflicts=('opencl-headers')
 source=("git://anongit.freedesktop.org/beignet#tag=Release_v${pkgver}")
 sha256sums=('SKIP')
